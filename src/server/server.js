@@ -2,19 +2,24 @@ import express from 'express';
 import React from 'react';
 import { renderToString } from 'react-dom/server';
 import Container from '../Components/Container';
-import Document from '../Components/Document'; 
+import Document from '../Components/Document';
+import logger from 'morgan';
+import bodyParser from 'body-parser';
+import path from 'path';
 
 const app = express();
 
-app.get('/', (req, res) => {
-	const renderedHTML = renderToString(<Container names={["steve", "aarthi", "steve", "subash", "bill"]}/>);
-	res.send(`<!DOCTYPE HTML><html><head></head><body><div id="root">${renderedHTML}</div><script src="/index.js"></script></body></html>`);
-});
+app.set('port', process.env.PORT || 3000);
+app.use(logger('dev'));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(express.static(path.join(__dirname, 'public')));
 
-app.get('/aark', (req, res) => {
-	const renderedHTML = '<!DOCTYPE HTML/>' + renderToString(<Document/>);
-	res.send(renderedHTML);
-	});
+
+app.get('/home', (req, res) => {
+const renderedHTML = '<!DOCTYPE HTML/>' + renderToString(<Document/>);
+res.send(renderedHTML );
+});
 
 app.use(express.static('dist'));
 

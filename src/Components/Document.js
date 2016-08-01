@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import { combineReducers } from 'redux';
+import { Provider } from 'react-redux';
+import { createStore } from '../utils/createStore';
 import Footer from './layout/Footer';
 import Header from './layout/Header';
 
