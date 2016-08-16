@@ -1,17 +1,13 @@
 import React, { Component } from 'react';
-import { combineReducers } from 'redux';
 import { Provider } from 'react-redux';
 import { createStore } from '../utils/createStore';
-import Footer from './layout/Footer';
-import Header from './layout/Header';
-import reducer from './widgets/Login/LoginReducer'
-
+import Footer from '../Components/layout/Footer';
+import Header from '../Components/layout/Header';
 
 export default class Document extends Component {
     constructor(props)
     {
         super(props);
-        this.store = createStore(reducer);
     }
 
 	render() {
@@ -20,11 +16,13 @@ export default class Document extends Component {
                 <html>
                     <head>
                         <title>Aark</title>
+
                         <link href="http://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.min.css" type="text/css" rel="stylesheet" />
                     </head>
                     <body>
                         <Header />
-                        Aark
+                        <div id="content" ></div>
+                        <script src="index.js"></script>
                         <Footer />
                     </body>
                 </html>

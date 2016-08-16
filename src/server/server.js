@@ -2,7 +2,7 @@ import express from 'express';
 import React from 'react';
 import { renderToString } from 'react-dom/server';
 import Container from '../Components/Container';
-import Document from '../Components/Document';
+import Document from '../pages/Document';
 import logger from 'morgan';
 import bodyParser from 'body-parser';
 import path from 'path';

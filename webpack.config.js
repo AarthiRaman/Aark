@@ -14,8 +14,14 @@ module.exports = {
 
   output: {
     filename: "[name].js",
-    path: process.cwd() + "/dist"
+    path: process.cwd() + "/dist",
+    publicPath: "/"
   },
+
+    resolve: {
+      extensions: ['', '.js', '.jsx']
+    },
+
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoErrorsPlugin(),
@@ -25,10 +31,14 @@ module.exports = {
   module: {
     loaders: [
       {
-        test: /\.js$/,
-        loaders: ['express-hot-loader', 'babel-loader'],
-        exclude: /node_modules/
-       }
+        test: /\.jsx?$/,
+        loader: 'babel',
+        exclude: /node_modules/,
+        query: {
+          cacheDirectory: true,
+          presets: ['react', 'es2015']
+        }
+      }
     ]
   }
 };
