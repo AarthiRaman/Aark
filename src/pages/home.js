@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Provider } from 'react-redux';
 import { createStore } from '../utils/createStore';
 import Login from '../Components/widgets/Login/Login';
+import Places from '../Components/widgets/Places/Places';
 import reducer from '../Components/widgets/Login/LoginReducer';
 import homeReducer from '../Components/combineReducers/homeReducer';
 
@@ -15,7 +16,8 @@ export default class Content extends Component {
 	render() {
 		return (
 		   <Provider store={this.store}>
-                <Login />
+                
+                <Places /> 
             </Provider>
 		)
 	}

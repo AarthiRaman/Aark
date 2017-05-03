@@ -1,28 +1,10 @@
-import express from 'express';
-import React from 'react';
-import { renderToString } from 'react-dom/server';
-import Container from '../Components/Container';
-import Document from '../pages/Document';
-import logger from 'morgan';
-import bodyParser from 'body-parser';
-import path from 'path';
+import setupExpress from './config_prod';
+import setupDevServer from './config_dev';
+import routes from './routes';
 
-const app = express();
+if(process.env.NODE_ENV !== 'development') {
+	setupExpress(routes);
+} else {
+	setupDevServer(routes);
+}
 
-app.set('port', process.env.PORT || 3000);
-app.use(logger('dev'));
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(express.static(path.join(__dirname, 'public')));
-
-
-app.get('/home', (req, res) => {
-const renderedHTML = '<!DOCTYPE HTML/>' + renderToString(<Document/>);
-res.send(renderedHTML );
-});
-
-app.use(express.static('dist'));
-
-app.listen(8000, () => {
-	console.log('port 8000!');
-});

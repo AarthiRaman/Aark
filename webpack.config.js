@@ -7,32 +7,39 @@ var devFlagPlugin = new webpack.DefinePlugin({
 
 
 module.exports = {
-  context: __dirname + "/src",
+  context: path.resolve(process.cwd(), 'src'),
   entry: {
     'index': './index.js'
   },
 
   output: {
     filename: "[name].js",
-    path: process.cwd() + "/dist",
-    publicPath: "/"
+    path: path.resolve(process.cwd(), 'dist'),
+    publicPath: "/" 
   },
 
     resolve: {
-      extensions: ['', '.js', '.jsx']
+      extensions: ['.js', '.jsx']
     },
 
   plugins: [
-    new webpack.HotModuleReplacementPlugin(),
-    new webpack.NoErrorsPlugin(),
-    devFlagPlugin,
-    new ExtractTextPlugin('app.css')
+    new webpack.NoEmitOnErrorsPlugin(),
+    devFlagPlugin
   ],
   module: {
     loaders: [
+       {
+        test: /\.html$/,
+        loader: "file?name=[name].[ext]",
+      },
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        loaders: ["react-hot-loader", "babel-loader"],
+      },
       {
         test: /\.jsx?$/,
-        loader: 'babel',
+        loader: 'babel-loader',
         exclude: /node_modules/,
         query: {
           cacheDirectory: true,
@@ -40,5 +47,10 @@ module.exports = {
         }
       }
     ]
+  },
+  devServer: {
+    inline: true,
+    port: 3000,
+    hot: true
   }
 };
