@@ -1,6 +1,6 @@
 import { combineReducers } from "redux";
-import loginReducer from "../widgets/Login/LoginReducer";
+import i18nReducer from "./i18nReducer";
 
 export default combineReducers({
-	loginReducer
+	i18n: i18nReducer
 });

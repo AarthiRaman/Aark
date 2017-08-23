@@ -1,32 +1,27 @@
-import React, { Component } from 'react';
-import { Provider } from 'react-redux';
-import { createStore } from '../utils/createStore';
-import Footer from '../Components/layout/Footer';
-import Header from '../Components/layout/Header';
+import React, { Component } from "react";
+import { connect } from "react-redux";
+import Header from "../Components/layout/Header/Header";
+import Footer from "../Components/layout/Footer/Footer";
+import "../scss/layout.scss";
 
-export default class Document extends Component {
-    constructor(props)
-    {
-        super(props);
-    }
+export class Document extends Component {
 
+    
 	render() {
+		const { i18n } =this.props;
 		return (
-		   <Provider store={this.store}>
-                <html>
-                    <head>
-                        <title>Aark</title>
-
-                        <link href="http://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.min.css" type="text/css" rel="stylesheet" />
-                    </head>
-                    <body>
-                        <Header />
-                        <div id="content" ></div>
-                        <script src="index.js"></script>
-                        <Footer />
-                    </body>
-                </html>
-            </Provider>
-		)
+			<div>
+				<Header />
+				<Footer />
+			</div>
+		);
 	}
 }
+
+const mapStateToProps = (state) => {
+	state.i18n;
+};
+
+export default connect(
+	mapStateToProps
+  )(Document);
