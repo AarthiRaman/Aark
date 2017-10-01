@@ -1,4 +1,3 @@
-import React from 'react';
-import { createStore as initialCreateStore, compose } from 'redux';
+import { createStore as initialCreateStore } from 'redux';
 
 export let createStore = initialCreateStore;
