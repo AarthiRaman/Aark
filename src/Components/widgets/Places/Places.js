@@ -1,20 +1,19 @@
-import React from "react";
-import PlacesAutocomplete, { geocodeByAddress } from "react-places-autocomplete";
+import React from 'react';
+import PlacesAutocomplete from 'react-places-autocomplete';
 
 class SearchPlaces extends React.Component {
 	constructor(props) {
 		super(props);
-		this.state = { address: "San Francisco, CA" };
+		this.state = { address: 'San Francisco, CA' };
 		this.onChange = (address) => this.setState({ address });
 		this.handleFormSubmit = this.handleFormSubmit.bind(this);
 	}
-
+ 
 	handleFormSubmit(event)  {
 		event.preventDefault();
 
-		geocodeByAddress(this.state.address,  (err, latLng) => {
-			console.log(`Yay! Got latitude and longitude for ${this.state.address}`, latLng);
-		});
+		// geocodeByAddress(this.state.address,  (err) => {
+		// });
 	}
 
 	render() {

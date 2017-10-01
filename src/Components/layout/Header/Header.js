@@ -1,9 +1,9 @@
-import React, { Component } from "react";
-import styles from "./Header.scss";
-import classnames from "classnames";
+import React, { Component } from 'react';
+import styles from './Header.scss';
+import classnames from 'classnames';
 export default class Header extends Component {
 	render() {
-		const headerClass = classnames(styles.header, "clearit"); 
+		const headerClass = classnames(styles.header, 'clearit'); 
 		return (<div className={headerClass}>
                    <div className={styles.topBarLeft}>
                       <a href="#">

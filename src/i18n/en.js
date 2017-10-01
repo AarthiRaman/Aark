@@ -1,5 +1,5 @@
 export default {
 	header: {
-		heading: "AARK"
+		heading: 'AARK'
 	} 
 };

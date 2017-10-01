@@ -27,11 +27,20 @@
         ],
         "quotes": [
             "error",
-            "double"
+            "single"
         ],
         "semi": [
             "error",
             "always"
-        ]
+        ],
+        "max-len": 0,
+        "no-unused-expressions": 0,
+        "new-cap": 0,
+        "react/wrap-multilines": 0,
+        "react/jsx-indent-props": 0,
+        "react/jsx-first-prop-new-line": 0,
+        "react/jsx-closing-bracket-location": 0,
+        "react/jsx-uses-react": "error",
+        "react/jsx-uses-vars": "error"
     }
 }

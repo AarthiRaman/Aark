@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 
 export default class Login extends Component {
 	constructor(props)
@@ -12,9 +12,8 @@ export default class Login extends Component {
 	}
 
 	render() {
-	    this.handleClick();
-		return (
-		  <a href="javascript:void(0)" onClick={this.handleClick.bind(this)}>Login</a>
-		);
+		this.handleClick(); 
+		
+		return <a href="javascript:void(0)" onClick={this.handleClick.bind(this)}>Login</a>; 
 	}
 }
