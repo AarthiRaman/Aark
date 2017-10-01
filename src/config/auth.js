@@ -1,13 +1,14 @@
+
 const APPID = '791783714227269';
 
 window.fbAsyncInit = function() {
-	FB.init({
+	FB.init({ // eslint-disable-line
 		appId            : APPID,
 		autoLogAppEvents : true,
 		xfbml            : true,
 		version          : 'v2.10'
 	});
-	FB.AppEvents.logPageView();
+	FB.AppEvents.logPageView(); // eslint-disable-line
 };
 
 (function(d, s, id){
