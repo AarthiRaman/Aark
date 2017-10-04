@@ -9,9 +9,11 @@
         padding: 20px;
         margin: 0;
     }
-    a{
+
+    a, span {
         color: #fff;
         text-decoration: none;
+        cursor: pointer;
     }
 
     .topBarLeft {

@@ -1,4 +1,6 @@
 import React from 'react';
 import { render } from 'react-dom';
-import Content from './pages/home';
-render(<Content />, document.getElementById('content'));
+import Home from './pages/home';
+
+render(<Home />, document.getElementById('content'));
+

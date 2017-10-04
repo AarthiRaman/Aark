@@ -6,6 +6,8 @@ body {
 	font-variant: normal;
 	font-weight: 400;
 	line-height: 20px;
+	min-width:100%;
+	min-height: 100%;
 }
 h1 {
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -22,4 +24,14 @@ h3 {
 	font-variant: normal;
 	font-weight: 500;
 	line-height: 15.4px;
+}
+
+body {
+	background-image: url(/public/img/background.jpg);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+div.aark-content {
+	min-height: 600px;
 }
