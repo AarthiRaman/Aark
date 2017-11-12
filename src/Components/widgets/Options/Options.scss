@@ -1,0 +1,37 @@
+.aarkOptions {
+    text-align: center;
+    color: #fff;
+    padding: 6% 0 0;
+}
+
+.aarkOptionsWrapper {
+    display: flex;
+    z-index: 100;
+    width: 100%;
+}
+
+.aarkOptionsHeading {
+    text-align: center;
+    margin: 0;
+    font-size: 36px;
+    font-weight: 200;
+    padding: 50px 0 0;
+}
+
+.aarkOptionsItemWrapper {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 80px 0;
+    width: 400px;
+    border-radius: 50%;
+    text-align: center;
+    margin: 70px 5%;
+    color: #fff;
+    font-size: 24px;
+    font-weight: 200;
+    cursor: pointer;
+
+    &:hover, &:focus {
+        background: rgba(255, 255, 255, 0.5);
+        color: #000;
+    }
+}

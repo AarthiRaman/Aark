@@ -27,11 +27,8 @@ h3 {
 }
 
 body {
-	background-image: url(/public/img/background.jpg);
+	background-image: url(/public/img/background1.jpg);
     background-size: 100% 100%;
-    background-repeat: no-repeat;
-}
-
-div.aark-content {
-	min-height: 600px;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
 }

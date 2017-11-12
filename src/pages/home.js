@@ -4,7 +4,7 @@ import { Provider } from 'react-redux';
 import { configureStore } from '../utils/createStore';
 import Document from './Document';
 
-import homeReducer from '../Components/Reducers/homeReducer';
+import homeReducer from '../Reducers/homeReducer';
 
 export default class Content extends Component {
 	constructor(props)
