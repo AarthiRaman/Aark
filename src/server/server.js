@@ -1,13 +1,11 @@
 import express from 'express';
-import React from 'react';
-import { renderToString } from 'react-dom/server';
-import Document from '../pages/Document';
+import path from 'path';
 
 const app = express();
 
 app.get('/', (req, res) => {
-	const renderedHTML = renderToString(<Document/>);
-	res.send(`<!DOCTYPE HTML><html><head></head><body><div id="root">${renderedHTML}</div><script src="/index.js"></script></body></html>`);
+	//const renderedHTML = renderToString(<Document/>);
+	res.sendFile(path.resolve(__dirname, '../../index.html'));
 });
 
 app.use(express.static('dist'));
