@@ -6,7 +6,7 @@
   "scripts": {
     "build": "node_modules/.bin/webpack --config webpack.prod.config.js",
     "dev": "node_modules/.bin/webpack-dev-server --config webpack.dev.config.js  --inline --hot",
-    "start": "npm run build && node_modules/.bin/nodemon ./app.js ",
+    "start": "npm run build && node ./app.js ",
     "lintjs": "node_modules/.bin/eslint app.js src test --ext .js --ext .jsx"
   },
   "repository": {
