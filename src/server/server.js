@@ -9,5 +9,4 @@ app.get('/', (req, res) => {
 
 app.use(express.static('dist'));
 
-app.listen(8000, () => {
-});
+app.listen(process.env.PORT || 5000);
