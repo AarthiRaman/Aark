@@ -28,6 +28,8 @@
     "babel-register": "^6.9.0",
     "body-parser": "^1.15.2",
     "classnames": "^2.2.5",
+    "babel-eslint": "^8.0.1",
+    "css-loader": "^0.28.4",
     "express": "^4.13.4",
     "extract-text-webpack-plugin": "^1.0.1",
     "history": "^3.0.0",
@@ -53,19 +55,16 @@
     "style-loader": "^0.18.2",
     "thunk": "0.0.1",
     "webpack": "^3.0.0",
+    "file-loader": "^0.11.1",
+    "node-sass": "^4.5.3",
     "webpack-dev-server": "^2.4.5",
     "webpack-split-by-path": "0.0.10"
   },
   "devDependencies": {
-    "babel-eslint": "^8.0.1",
-    "babel-preset-stage-0": "^6.24.1",
-    "css-loader": "^0.28.4",
     "eslint": "^3.19.0",
     "eslint-config-airbnb": "^15.1.0",
     "eslint-plugin-react": "^6.10.3",
     "express-hot-loader": "0.0.1",
-    "file-loader": "^0.11.1",
-    "node-sass": "^4.5.3",
     "pre-commit": "^1.2.2"
   },
   "pre-commit": [
