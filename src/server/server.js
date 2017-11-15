@@ -6,7 +6,7 @@ const app = express();
 app.use(express.static('public'));
 
 app.get('/', (req, res) => {
-	if(req.path.contains('public')) {
+	if(req.path.indexOf('public') > 0) {
 		res.sendFile(path.resolve(__dirname, req.path));
 	} else {
 		res.sendFile(path.resolve(__dirname, '../../index.html'));		
