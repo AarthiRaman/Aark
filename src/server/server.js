@@ -3,10 +3,15 @@ import path from 'path';
 
 const app = express();
 
+app.use(express.static('public'));
+
 app.get('/', (req, res) => {
-	res.sendFile(path.resolve(__dirname, '../../index.html'));
+	if(req.path.contains('public')) {
+		res.sendFile(path.resolve(__dirname, req.path));
+	} else {
+		res.sendFile(path.resolve(__dirname, '../../index.html'));		
+	}
 });
 
-app.use(express.static('dist'));
 
 app.listen(process.env.PORT || 5000);
