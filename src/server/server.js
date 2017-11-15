@@ -6,12 +6,12 @@ const app = express();
 app.use(express.static('public'));
 
 app.get('/', (req, res) => {
-	if(req.path.indexOf('public') > 0) {
+	if(req.path.indexOf('public') > -1) {
 		res.sendFile(path.resolve(__dirname, req.path));
 	} else {
 		res.sendFile(path.resolve(__dirname, '../../index.html'));		
 	}
 });
 
-
+ 
 app.listen(process.env.PORT || 5000);
